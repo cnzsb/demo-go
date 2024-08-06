@@ -11,7 +11,7 @@ import "rsc.io/quote"
 // auto re-organize deps: go mod tidy
 // install deps: go get xxx
 
-func Mod() {
+func Go() {
 	fmt.Println(quote.Glass())
 	fmt.Println(quote.Go())
 	fmt.Println(quote.Hello())
