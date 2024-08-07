@@ -13,15 +13,29 @@ func define() {
 	num2 := 3
 	fmt.Println("num:", num1, num2)
 
-	//const (
-	//	IOTA1 = iota + 100
-	//	IOTA2,
-	//	IOTA3, IOTA4 = iota * 2, iota * 3
-	//	IOTA5, IOTA6,
-	//	IOTA7, IOTA8, IOTA9 = iota + 10, iota + 20, iota + 30
-	//	IOTA10, IOTA11, IOTA12
-	//)
-	//fmt.Println("IOTA: ", IOTA1, IOTA2, IOTA3, IOTA4, IOTA5, IOTA6, IOTA7, IOTA8, IOTA9, IOTA10, IOTA11, IOTA12)
+	const A = false
+	fmt.Println("const A:", A)
+
+	const (
+		B = 'B'
+		C = 111
+	)
+	fmt.Println("const B/C:", B, C)
+
+	const (
+		D = iota + 10
+		E
+	)
+	fmt.Println("iota - D:", D, "E:", E)
+
+	const (
+		F, G, H = iota + 1, iota * 2, iota ^ 2
+		I, J, K
+		L, M = iota + 100, iota * 100
+		N, O
+	)
+
+	fmt.Println("iota multiple variables in each line: ", F, G, H, I, J, K, L, M, N, O)
 
 	var arr1 [3]int
 	arr1[1] = 1
@@ -42,11 +56,11 @@ func define() {
 	fmt.Println("slice2 after appended a new element: ", slice2, len(slice2), cap(slice2))
 
 	for i := 0; i < len(slice2); i++ {
-		fmt.Printf("slice2[%d]: %d\n", i, slice2[i])
+		fmt.Printf("slice2[%D]: %D\n", i, slice2[i])
 	}
 
 	for index, value := range slice2 {
-		fmt.Printf("slice2[%d]: %d\n", index, value)
+		fmt.Printf("slice2[%D]: %D\n", index, value)
 	}
 
 	slice3 := copy(slice2, slice1)
