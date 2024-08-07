@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+// will modify the original map, map is like a pointer value
+func updateMap(m map[string]int) {
+	m["d"] = 4
+}
+
 func define() {
 	var str1 string
 	str1 = "hello"
@@ -65,6 +70,21 @@ func define() {
 
 	slice3 := copy(slice2, slice1)
 	fmt.Println("copy slice3: ", slice3, slice2)
+
+	var m1 map[string]int
+	// map should make first
+	m1 = make(map[string]int, 1)
+	m1["a"] = 1
+	fmt.Println("m1: ", m1)
+
+	m2 := map[string]int{"a": 1, "b": 2}
+	m2["c"] = 3
+	fmt.Println("m2: ", m2, len(m2))
+	delete(m2, "c")
+	fmt.Println("m2: ", m2, len(m2))
+
+	updateMap(m2)
+	fmt.Println("m3: ", m2, len(m2))
 }
 
 func main() {
